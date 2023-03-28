@@ -1,0 +1,12 @@
+/* ----- Fonts ----- */
+@font-face {
+  font-family: "sharp";
+  src: url("../fonts/SHARP/Sharp.otf");
+  font-family: "sharpItalic";
+  src: url("../fonts/SHARP/SharpItalic.otf");
+  font-family: "sharpBold";
+  src: url("../fonts/SHARP/SharpBold.otf");
+}
+/* ----- Colors ----- */
+/* ----- General ----- */
+/* -----  ----- *//*# sourceMappingURL=style.css.map */
