@@ -77,6 +77,7 @@ main {
 
 // 1e section
 section {
+    width: auto;
     >* {
         padding: 0 5vw;
     }
@@ -100,10 +101,10 @@ section {
 }
 
 #section2 {
+    background-color: $colorGreen;
     .slider {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background-color: $colorGreen;
         .conteneur-slides {
             position: relative;
             overflow: hidden;
@@ -147,10 +148,21 @@ section {
                 border: none;
                 letter-spacing: 5px;
                 font-weight: bold;
+                &:hover{
+                    background-color: black;
+                    color: white;
+                }
+                &:active{
+                    background-color: $colorGrey;
+                    color:$colorGreen;
+                }
             }
         }
     }
-
+    .logo{
+        padding: 40px ;
+        text-align: center;
+    }
 }
 
 

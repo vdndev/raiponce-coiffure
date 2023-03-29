@@ -57,6 +57,9 @@ main {
   margin-top: -150px;
 }
 
+section {
+  width: auto;
+}
 section > * {
   padding: 0 5vw;
 }
@@ -75,10 +78,12 @@ section > * {
      object-fit: cover;
 }
 
+#section2 {
+  background-color: #C5CEBD;
+}
 #section2 .slider {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #C5CEBD;
 }
 #section2 .slider .conteneur-slides {
   position: relative;
@@ -125,6 +130,18 @@ section > * {
   border: none;
   letter-spacing: 5px;
   font-weight: bold;
+}
+#section2 .slider .textSlide button:hover {
+  background-color: black;
+  color: white;
+}
+#section2 .slider .textSlide button:active {
+  background-color: #777777;
+  color: #C5CEBD;
+}
+#section2 .logo {
+  padding: 40px;
+  text-align: center;
 }
 
 .slides.active {
