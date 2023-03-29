@@ -31,15 +31,14 @@ Ce site doit contenir:
 
 L'utilisation d'un CMS est exclue
 
-## Personas
-
 ## Questions
 
-- interlocuteur, poste, responsabilite vis a vis du site
 - Clientele? deja presente, facilite
-- Nom du site Gueudin Coiffure, Charte graphique image joyeuse mais , Logo a faire a confirmer par mail
-- mobile
-- nom de domaine, referencement, reseaux sociaux, hebergement?
+- Nom du site Gueudin Coiffure? Raiponce Coiffure
+- Charte graphique? image joyeuse mais pro
+- Logo? Proposition a confirmer par mail
+- mobile? oui
+- nom de domaine, referencement, reseaux sociaux, hebergement? Gere par nos soins
 
 ### Proposition
 
@@ -49,9 +48,7 @@ nom de domaine a acheter (~10/an)
 
 ## Use case
 
-- CRUD soins
-- CRUD coiffures
-- CRUD tarifs
+- CRUD Prestations (soins,coiffures)
 - CRUD reservations
 - Ajouter, Afficher, Lister, Effacer les temoignages
 - Ajouter, Afficher, Effacer les contacts
@@ -64,5 +61,6 @@ nom de domaine a acheter (~10/an)
   - src
 
 - frontend
+
   - public
   - src
