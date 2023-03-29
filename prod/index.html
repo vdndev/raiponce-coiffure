@@ -5,52 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raiponce Coiffure</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
     <header>
-        <img src="" alt="logo">
+        <img src="assets/img/LogoName.svg" alt="logo">
         <nav>
             <ul>
-                <li><a href="">Coupes et Soins</a></li>
-                <li><a href=""></a>Tarifs</a></li>
-                <li><a href=""></a>Réservation</a></li>
-                <li><a href=""></a>Contact</a></li>
+                <li><a href="">COUPES ET SOINS</a></li>
+                <li><a href="">TARIFS</a></li>
+                <li><a href="">RÉSERVATIONS</a></li>
+                <li><a href="">CONTACT</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section>
+        <!-- Section 1 -->
+        <section id="section1">
             <h1>Lorem quelque chose de vraiment sympa</h1>
-            <img class="mainImg" src="../img/mainImg.jpg" alt="mainImg">
+            <img class="mainImg" src="assets/img/imgHeader.png" alt="mainImg">
         </section>
-        <!-- slides, bouton reserver -->
-        <section>
+        <!-- Section 2 -->
+        <section id="section2">
             <div class="slider">
                 <div class="conteneur-slides">
-                    <div class="slides"><img src="../img/slide1.jpg" alt="img1"></div>
-                    <div class="slides"><img src="../img/slide2.jpg" alt="img2"></div>
-                    <div class="slides"><img src="../img/slide3.jpg" alt="img3"></div>
+                    <div class="slides"><img src="assets/img/imgSlideFemme.jpg" alt="img1"></div>
+                    <div class="slides"><img src="assets/img/slide2.jpg" alt="img2"></div>
+                    <div class="slides"><img src="assets/img/slide3.jpg" alt="img3"></div>
                     <button onclick="changerSlide(-1)" class="btn btn-prev"><</button>
                     <button onclick="changerSlide(1)" class="btn btn-next">></button>
                 </div>
                 <div class="textSlide">
                     <h2>Découvrez nos incroyables coupes et soins pour femme, wow!</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quos quia, voluptas officiis nulla architecto, unde velit expedita dolore ducimus dolorem hic vel natus. Autem unde ad similique odit nostrum!</p>
-                    <button>Réservez</button>
+                    <button>RESERVER</button>
                 </div>
             </div>
             <div class="slider">
-                <div class="conteneur-slides">
-                    <div class="slides"><img src="" alt="img1"></div>
-                    <div class="slides"><img src="" alt="img2"></div>
-                    <div class="slides"><img src="" alt="img3"></div>
-                </div>
                 <div class="textSlide">
                     <h2>On coupe aussi les cheveux aux hommes, c'est fou non ?</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quos quia, voluptas officiis nulla architecto, unde velit expedita dolore ducimus dolorem hic vel natus. Autem unde ad similique odit nostrum!</p>
-                    <button>Réservez</button>
+                    <button>RESERVER</button>
+                </div>
+                <div class="conteneur-slides">
+                    <div class="slides active"><img src="assets/img/imgSlideHomme.jpg" alt="img1"></div>
+                    <div class="slides"><img src="" alt="img2"></div>
+                    <div class="slides"><img src="" alt="img3"></div>
                 </div>
             </div>
             <img src="" alt="logo">

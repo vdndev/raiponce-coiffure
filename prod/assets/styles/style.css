@@ -1,0 +1,153 @@
+/* ----- Fonts ----- */
+@font-face {
+  font-family: "sharp";
+  src: url("../fonts/SHARP/Sharp.otf");
+  font-family: "sharpItalic";
+  src: url("../fonts/SHARP/SharpItalic.otf");
+  font-family: "sharpBold";
+  src: url("../fonts/SHARP/SharpBold.otf");
+}
+/* ----- Colors ----- */
+/* ----- General ----- */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sharp, sans-serif;
+}
+* h1 {
+  font-size: 64px;
+  font-family: "sharpBold";
+  color: white;
+}
+* h2 {
+  font-size: 36px;
+  font-family: "sharpBold";
+  color: white;
+}
+
+/* ----- Header ----- */
+header {
+  height: 150px;
+  position: relative;
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+}
+header img {
+  width: 250px;
+}
+header nav {
+  width: 50%;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ----- Main ----- */
+main {
+  z-index: 1;
+  margin-top: -150px;
+}
+
+section > * {
+  padding: 0 5vw;
+}
+
+#section1 h1 {
+  position: absolute;
+  top: 75vh;
+  z-index: 3;
+  width: 50%;
+}
+#section1 .mainImg {
+  width: 100%;
+  height: 100vh;
+  background-color: #C2B8CC;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#section2 .slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #C5CEBD;
+}
+#section2 .slider .conteneur-slides {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+#section2 .slider .conteneur-slides .slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#section2 .slider .conteneur-slides .slides img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#section2 .slider .conteneur-slides .slides.active {
+  opacity: 1;
+}
+#section2 .slider .textSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10%;
+}
+#section2 .slider .textSlide > * {
+  margin: 10px;
+}
+#section2 .slider .textSlide p {
+  line-height: 25px;
+  font-weight: light;
+  color: #777777;
+}
+#section2 .slider .textSlide button {
+  height: 50px;
+  width: 180px;
+  background-color: white;
+  color: black;
+  border: none;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.slides.active {
+  opacity: 1;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  padding: 15px;
+  color: rgb(61, 61, 61);
+  font-weight: bold;
+  font-size: 3rem;
+  border: none;
+  background-color: transparent;
+}
+
+.btn-prev {
+  left: 0;
+}
+
+.btn-next {
+  right: 0;
+}
+
+/* -----  ----- *//*# sourceMappingURL=style.css.map */
