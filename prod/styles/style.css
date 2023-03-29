@@ -7,53 +7,7 @@
   font-family: "sharpBold";
   src: url("../fonts/SHARP/SharpBold.otf");
 }
+
 /* ----- Colors ----- */
 /* ----- General ----- */
-.conteneur-slides {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
-
-.slides {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.slides.active {
-  opacity: 1;
-}
-
-.slides img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.btn {
-  position: absolute;
-  top: 50%;
-  padding: 15px;
-  color: rgb(61, 61, 61);
-  font-weight: bold;
-  font-size: 3rem;
-  border: none;
-  background-color: transparent;
-}
-
-.btn-prev {
-  left: 0;
-}
-
-.btn-next {
-  right: 0;
-}
-
 /* -----  ----- *//*# sourceMappingURL=style.css.map */

@@ -23,17 +23,17 @@
     <main>
         <section>
             <h1>Lorem quelque chose de vraiment sympa</h1>
-            <img src="" alt="">
+            <img class="mainImg" src="../img/mainImg.jpg" alt="mainImg">
         </section>
         <!-- slides, bouton reserver -->
         <section>
-            <div>
+            <div class="slider">
                 <div class="conteneur-slides">
                     <div class="slides"><img src="../img/slide1.jpg" alt="img1"></div>
                     <div class="slides"><img src="../img/slide2.jpg" alt="img2"></div>
                     <div class="slides"><img src="../img/slide3.jpg" alt="img3"></div>
-                    <button class="btn btn-prev"><</button>
-                    <button class="btn btn-next">></button>
+                    <button onclick="changerSlide(-1)" class="btn btn-prev"><</button>
+                    <button onclick="changerSlide(1)" class="btn btn-next">></button>
                 </div>
                 <div>
                     <h2>Découvrez nos incroyables coupes et soins pour femme, wow!</h2>
