@@ -35,6 +35,17 @@ L'utilisation d'un CMS est exclue
 
 ## Questions
 
+- interlocuteur, poste, responsabilite vis a vis du site
+- Clientele? deja presente, facilite
+- Nom du site Gueudin Coiffure, Charte graphique image joyeuse mais , Logo a faire a confirmer par mail
+- mobile
+- nom de domaine, referencement, reseaux sociaux, hebergement?
+
+### Proposition
+
+Pack 2500eur (Site + Logo + Hebergement)
+50eur/mois de maintenance
+nom de domaine a acheter (~10/an)
 
 ## Use case
 
@@ -48,8 +59,10 @@ L'utilisation d'un CMS est exclue
 ## Structure du repo
 
 - backend
+
   - public
   - src
+
 - frontend
   - public
   - src
