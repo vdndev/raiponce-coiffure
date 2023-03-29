@@ -27,13 +27,13 @@
         </section>
         <!-- slides, bouton reserver -->
         <section>
-            <div class="slider">
+            <div class="slider" id="slider1">
                 <div class="conteneur-slides">
-                    <div class="slides"><img src="../img/slide1.jpg" alt="img1"></div>
+                    <div class="slides active"><img src="../img/slide1.jpg" alt="img1"></div>
                     <div class="slides"><img src="../img/slide2.jpg" alt="img2"></div>
                     <div class="slides"><img src="../img/slide3.jpg" alt="img3"></div>
-                    <button onclick="changerSlide(-1)" class="btn btn-prev"><</button>
-                    <button onclick="changerSlide(1)" class="btn btn-next">></button>
+                    <button class="btn btn-prev"><</button>
+                    <button class="btn btn-next">></button>
                 </div>
                 <div class="textSlide">
                     <h2>Découvrez nos incroyables coupes et soins pour femme, wow!</h2>
@@ -41,13 +41,13 @@
                     <button>Réservez</button>
                 </div>
             </div>
-            <div class="slider">
+            <div class="slider" id="slider2">
                 <div class="conteneur-slides">
-                    <div class="slides"><img src="../img/slide4 .jpg" alt="img1"></div>
+                    <div class="slides active"><img src="../img/slide4 .jpg" alt="img1"></div>
                     <div class="slides"><img src="../img/slide5.jpg" alt="img2"></div>
                     <div class="slides"><img src="../img/slide6.jpg" alt="img3"></div>
-                    <button onclick="changerSlide(-1)" class="btn btn-prev"><</button>
-                    <button onclick="changerSlide(1)" class="btn btn-next">></button>
+                    <button class="btn btn-prev"><</button>
+                    <button class="btn btn-next">></button>
                 </div>
                 <div class="textSlide">
                     <h2>On coupe aussi les cheveux aux hommes, c'est fou non ?</h2>

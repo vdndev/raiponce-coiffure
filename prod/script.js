@@ -1,46 +1,62 @@
-//carroussel
+//caroussel
 
-let slideIndex = 0;
-let conteneur = document.querySelector(".conteneur-slides");
-let slides = conteneur.querySelectorAll(".slides");
+function carousselAuto(slider) {
 
-changerSlide(slideIndex);
+    let slides = slider.querySelectorAll(".slides");
+    let index = 0;
 
-function changerSlide(n, conteneur) {
+    setInterval(function () {
 
-    function afficherSlide(n) {
-
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
+        slides[index].classList.remove("active");
+        index++;
+        if (index === slides.length) {
+            index = 0;
         }
+        slides[index].classList.add("active");
+    }, 3000);
+}
+    
+function carousselManual(slider) {
 
-        slideIndex += n;    
+    let slides = slider.querySelectorAll(".slides");
+    let prev = slider.querySelector(".btn-prev");
+    let next = slider.querySelector(".btn-next");
+    let index = 0;
 
-        if (slideIndex > slides.length - 1) {
-            slideIndex = 0;
+    prev.addEventListener("click", function () {
+        slides[index].classList.remove("active");
+        index--;
+        if (index < 0) {
+            index = slides.length - 1;
         }
+        slides[index].classList.add("active");
+    });
 
-        if (slideIndex < 0) {
-            slideIndex = slides.length - 1;
-        }
-        
-
-        slides[slideIndex].classList.add("active");
-        }
-
-    afficherSlide(n);
+    next.addEventListener("click", function () {
+    slides[index].classList.remove("active");
+    index++;
+    if (index === slides.length) {
+        index = 0;
+    }
+    slides[index].classList.add("active");
+    });
 }
 
-//fetch les avis
-let formulaire = document.querySelector("form")
+let sliders = document.querySelectorAll(".slider");
+
+for (var i = 0; i < sliders.length; i++) {
+    carousselAuto(sliders[i]);
+    carousselManual(sliders[i]);
+}
+
+//fetch les avis/////////////////////////////////////////////
+let formulaire = document.querySelector(".formAvis")
 let divAvis = document.querySelector(".avis");
 
 formulaire.addEventListener("submit", function(event) {
     event.preventDefault(); 
 
-    const formData = new FormData();
-    formData.append("prenom", prenom);
-    formData.append("msg", msg);
+    const formData = new FormData(formulaire);
 
     fetch("http://localhost/raiponce-coiffure/prod/", {
         method: "POST",
@@ -48,6 +64,7 @@ formulaire.addEventListener("submit", function(event) {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             let avis = "";
             avis += `
                 <p>${prenom}</p>

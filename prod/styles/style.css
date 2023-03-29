@@ -69,6 +69,7 @@ body {
   font-size: 3rem;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .btn-prev {
