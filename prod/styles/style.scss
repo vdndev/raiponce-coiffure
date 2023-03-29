@@ -14,17 +14,85 @@
 /* ----- Colors ----- */
 $colorSable : #DFCCC2;
 $colorGreen : #C5CEBD;
-$colorPurple : #C2B8CC
+$colorPurple : #C2B8CC;
 
 
 /* ----- General ----- */
-*{
-
-}
-body{
-
+body {
+    margin: 0;
+    padding: 0;
 }
 
+// 1e section
+
+.mainImg {
+    width: 100%;
+    height: 100vh;
+}
+
+
+//2e section
+
+.slider{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $colorGreen;
+}
+
+.textSlide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
+
+// carroussel
+.conteneur-slides {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slides.active {
+    opacity: 1;
+}
+
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    padding: 15px;
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    font-size: 3rem;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-prev {
+    left: 0;    
+}
+
+.btn-next {
+    right: 0;
+}
 /* -----  ----- */
 
 
