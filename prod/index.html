@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raiponce Coiffure</title>
+    <title>Raiponce Barber</title>
     <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
+    <!-- Header -->
     <header>
         <img src="assets/img/LogoName.svg" alt="logo">
         <nav>
@@ -19,33 +24,41 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
-        <!-- Section 1 -->
+        <!-- En tête -->
         <section id="section1">
             <h1>Lorem quelque chose de vraiment sympa</h1>
             <img class="mainImg" src="assets/img/imgHeader.png" alt="mainImg">
         </section>
-        <!-- Section 2 -->
+        <!-- slides, bouton reserver -->
         <section id="section2">
             <div class="slider">
                 <div class="conteneur-slides">
                     <div class="slides"><img src="assets/img/imgSlideFemme.jpg" alt="img1"></div>
                     <div class="slides"><img src="assets/img/slide2.jpg" alt="img2"></div>
                     <div class="slides"><img src="assets/img/slide3.jpg" alt="img3"></div>
-                    <button onclick="changerSlide(-1)" class="btn btn-prev"><</button>
-                    <button onclick="changerSlide(1)" class="btn btn-next">></button>
+                    <button onclick="changerSlide(-1)" class="btn btn-prev"><span class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span></button>
+                    <button onclick="changerSlide(1)" class="btn btn-next"><span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span></button>
                 </div>
                 <div class="textSlide">
                     <h2>Découvrez nos incroyables coupes et soins pour femme, wow!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quos quia, voluptas officiis nulla architecto, unde velit expedita dolore ducimus dolorem hic vel natus. Autem unde ad similique odit nostrum!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quos quia, voluptas officiis
+                        nulla architecto, unde velit expedita dolore ducimus dolorem hic vel natus. Autem unde ad
+                        similique odit nostrum!</p>
                     <button>RESERVER</button>
                 </div>
             </div>
             <div class="slider">
                 <div class="textSlide">
                     <h2>On coupe aussi les cheveux aux hommes, c'est fou non ?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quos quia, voluptas officiis nulla architecto, unde velit expedita dolore ducimus dolorem hic vel natus. Autem unde ad similique odit nostrum!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quos quia, voluptas officiis
+                        nulla architecto, unde velit expedita dolore ducimus dolorem hic vel natus. Autem unde ad
+                        similique odit nostrum!</p>
                     <button>RESERVER</button>
                 </div>
                 <div class="conteneur-slides">
@@ -58,64 +71,153 @@
 
         </section>
         <!-- les offres du salon -->
-        <section>
-            <h2>Découvrez notre offre</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quos explicabo facere facilis voluptatum exercitationem fugit corporis, doloribus magni, ut cumque accusantium necessitatibus maiores aliquam atque quam aspernatur harum distinctio.</p>
+        <section id="section3">
+            <h1>Découvrez notre offre</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quos explicabo facere facilis
+                voluptatum exercitationem fugit corporis, doloribus magni, ut cumque accusantium necessitatibus maiores
+                aliquam atque quam aspernatur harum distinctio.</p>
             <div>
                 <div class="soins">
-                    <h3>Les soins</h3>
+                    <h2>Les soins</h2>
                     <p>Découvrez nos super soins, que vous ne retrouverez pas ailleurs</p>
-                    <p>API Soins</p>
+                    <div class="apiSoins">
+                        <div class="listSoins">
+                            <h3>Soin 1</h3>
+                            <p id="dots">
+                                ...............................................................................................................
+                            </p>
+                            <p class="prix">prix €</p>
+                        </div>
+                        <div class="listSoins">
+                            <h3>Soin 2</h3>
+                            <p id="dots">
+                                ...............................................................................................................
+                            </p>
+                            <p class="prix">prix €</p>
+                        </div>
+                        <div class="listSoins">
+                            <h3>Soin 3</h3>
+                            <p id="dots">
+                                ...............................................................................................................
+                            </p>
+                            <p class="prix">prix €</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="coupes"> 
-                    <h3>Les Coupes</h3>
+                <div class="coupes">
+                    <h2>Les Coupes</h2>
                     <p>Découvrez nos super coupes, elles sont vraiment uniques</p>
-                    <p>API Coupes</p>
+                    <div class="apiCoupes">
+                        <div class="listCoupes">
+                            <h3>Coupe 1</h3>
+                            <p id="dots">
+                                ...............................................................................................................
+                            </p>
+                            <p class="prix">prix €</p>
+                        </div>
+                        <div class="listCoupes">
+                            <h3>Coupe 2</h3>
+                            <p id="dots">
+                                ...............................................................................................................
+                            </p>
+                            <p class="prix">prix €</p>
+                        </div>
+                        <div class="listCoupes">
+                            <h3>Coupe 3</h3>
+                            <p id="dots">
+                                ...............................................................................................................
+                            </p>
+                            <p class="prix">prix €</p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+        <!-- Les photos -->
+        <section id="section4">
+
         </section>
         <!-- les avis clients -->
-        <section>
+        <section id="section5">
             <div class="avis">
-                <img src="" alt="img">
-                <p>API Avis</p>
+                <div class="apiAvis">
+                    <h3>“Mes cheveux ont été coupés comme jamais auparavant, c’est un moment que je n’oublierai jamais.”</h3>
+                    <p>Margaux, cliente ravie</p>
+                    <img src="assets/img/LogoSolo.svg" alt="">
+                </div>
+                <div class="formAvis">
+                    <form action="">
+                        <input type="text" name="prenom" placeholder="Prénom"><br>
+                        <input type="text" name="nom" placeholder="Nom"><br>
+                        <input type="mail" name="mail" placeholder="Adresse mail"><br>
+                        <input type="text" name="commentaire" placeholder="Commentaire">
+                        <br>
+                        <button>ENVOYER</button>
+                    </form>
+                </div>
             </div>
+        <img src="assets/img/imgHeader.png" alt="img">
         </section>
         <!-- formulaire de reservation -->
-        <section>
-            <h2>Réservez votre rendez-vous</h2>
+        <section id="section6">
+            <h1>Réservez votre rendez-vous</h1>
             <p>Ça va vraiment être un moment exceptionnel</p>
+            <div class="formReservation">
             <form action="">
                 <input type="text" name="prenom" id="prenom" placeholder="Prénom">
-                <input type="text" name="nom" id="nom" placeholder="Nom">
+                <input type="text" name="nom" id="nom" placeholder="Nom"><br>
                 <input type="email" name="mail" id="mail" placeholder="Adresse mail">
-                <input type="text" name="objet" id="objet" placeholder="Objet">
-                <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Message"></textarea>
-                <input type="submit" value="Envoyer">
+                <input type="text" name="objet" id="objet" placeholder="Objet"><br>
+                <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Message"></textarea><br>
+                <button>RESERVER</button>
             </form>
+        </div>
         </section>
         <!-- formulaire de contact -->
-        <section>
-            <h2>Contactez-nous</h2>
-            <p>Pour nous dire quelque chose, éventuellement...</p>
-            <form action="">
-                <input type="text" name="prenom" id="prenom" placeholder="Prénom">
-                <input type="text" name="nom" id="nom" placeholder="Nom">
-                <input type="email" name="mail" id="mail" placeholder="Adresse mail">
-                <input type="text" name="objet" id="objet" placeholder="Objet">
-                <textarea name="msg" id="msg" cols="10" rows="10" placeholder="Message"></textarea>
-                <input type="submit" value="Envoyer">
-            </form>
+        <section id="section7">
+            <div>
+            <div class="formContact">
+                <h2>Contactez-nous</h2>
+                <p>Pour nous dire quelque chose, éventuellement...</p>
+                <form action="">
+                    <input type="text" name="prenom" id="prenom" placeholder="Prénom"><br>
+                    <input type="text" name="nom" id="nom" placeholder="Nom"><br>
+                    <input type="email" name="mail" id="mail" placeholder="Adresse mail"><br>
+                    <input type="text" name="objet" id="objet" placeholder="Objet"><br>
+                    <input name="msg" id="msg"  placeholder="Message"></input><br>
+                    <button>ENVOYER</button>
+                </form>
+            </div>
+            <img src="assets/img/imgContact.jpg" alt="">
+        </div>
         </section>
-        
-        
-
     </main>
-
+    <!-- Footer -->
     <footer>
-
+        <div>
+            <img src="assets/img/LogoName.svg" alt="logo">
+        </div>
+        <div>
+            <h3>Suivez Nous</h3>
+            <a href="">Instagram</a>
+            <a href="">Facebook</a>
+            <a href="">Twitter</a>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p>1234567890</p>
+            <p>tignasse@coiffure.fr</p>
+            <p>1 rue de la mèche 12345 Rebelle</p>
+        </div>
+        <div>
+            <h3>Horaires</h3>
+            <p>fermé le lundi</p>
+            <p>du mardi au vendredi 9h00 18h00</p>
+            <p>le samedi 10h 17h00</p>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
+
+<script src="script.js"></script>

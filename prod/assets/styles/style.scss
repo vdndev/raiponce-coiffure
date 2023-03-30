@@ -16,6 +16,9 @@ $colorSable : #DFCCC2;
 $colorGreen : #C5CEBD;
 $colorPurple : #C2B8CC;
 $colorGrey : #777777;
+$colorBrown : #B49986;
+$colorLightGrey : #D9D9D9;
+$colorDarkPurple: #9B80B7;
 
 /* ----- General ----- */
 * {
@@ -32,11 +35,21 @@ $colorGrey : #777777;
     h2 {
         font-size: 36px;
         font-family: "sharpBold";
-        color:white;
+        color: white;
+    }
+
+    h3 {
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    p,a {
+        font-size: 20px;
+        color: white;
+        font-weight: 100;
     }
 }
-
-body {}
 
 /* ----- Header ----- */
 header {
@@ -63,6 +76,10 @@ header {
             li a {
                 color: white;
                 text-decoration: none;
+
+                &:hover {
+                    border-bottom: solid 4px white;
+                }
             }
         }
     }
@@ -74,41 +91,52 @@ main {
     margin-top: -150px;
 }
 
-
-// 1e section
+/* ----- Sections ----- */
 section {
-    width: auto;
+    width: 100%;
+    padding: 5vw 0;
+    max-height:1080px;
     >* {
         padding: 0 5vw;
-    }
+    } 
 }
 
+// 1e section - En-tête
 #section1 {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
     h1 {
         position: absolute;
-        top: 75vh;
+        top: 75%;
         z-index: 3;
         width: 50%;
     }
 
     .mainImg {
-        width: 100%;
-        height: 100vh;
+        padding: 0;
+        width: 100%; 
+        height: 100%;
         background-color: $colorPurple;
         object-fit: cover;
-
+        box-sizing: content-box;
     }
 }
 
+// 2e section - Slides, bouton reserver
 #section2 {
     background-color: $colorGreen;
+    max-height: none;
     .slider {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
         .conteneur-slides {
             position: relative;
             overflow: hidden;
             aspect-ratio: 1;
+
             .slides {
                 position: absolute;
                 top: 0;
@@ -117,30 +145,55 @@ section {
                 height: 100%;
                 opacity: 0;
                 transition: opacity 1s ease-in-out;
+
                 img {
                     width: 100%;
                     object-fit: cover;
                 }
             }
+
             .slides.active {
                 opacity: 1;
             }
+
+            .btn {
+                position: absolute;
+                top: 50%;
+                padding: 15px;
+                color: $colorGrey;
+                font-weight: bold;
+                font-size: 3rem;
+                border: none;
+                background-color: transparent;
+            }
+
+            .btn-prev {
+                left: 0;
+            }
+
+            .btn-next {
+                right: 0;
+            }
         }
+
         .textSlide {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items:flex-start;
+            align-items: flex-start;
             padding: 10%;
-            >*{
+
+            >* {
                 margin: 10px;
             }
-            p{
+
+            p {
                 line-height: 25px;
                 font-weight: light;
                 color: $colorGrey;
             }
-            button{
+
+            button {
                 height: 50px;
                 width: 180px;
                 background-color: white;
@@ -148,49 +201,311 @@ section {
                 border: none;
                 letter-spacing: 5px;
                 font-weight: bold;
-                &:hover{
+
+                &:hover {
                     background-color: black;
                     color: white;
                 }
-                &:active{
+
+                &:active {
                     background-color: $colorGrey;
-                    color:$colorGreen;
+                    color: $colorGreen;
                 }
             }
+
         }
     }
-    .logo{
-        padding: 40px ;
+
+    .logo {
+        padding: 40px;
         text-align: center;
     }
 }
 
+// 3e section - Les offres du salon
+#section3 {
+    background-color: $colorSable;
+    width: 100%;
+    height: 100vh;
 
-//2e section
+    h1,
+    >p {
+        text-align: center;
+        width: 50%;
+        margin: auto;
+    }
 
-// carroussel
+    h2 {
+        color: $colorBrown;
+    }
 
-.slides.active {
-    opacity: 1;
+    .soins,
+    .coupes {
+        width: 45%;
+        >p {
+            color: $colorBrown;
+            font-size: 16px;
+        }
+    }
+
+    >div {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        padding: 5vw;
+    }
+
+    .apiCoupes,
+    .apiSoins {
+        padding: 50px 0;
+
+        #dots {
+            z-index: 3;
+            overflow: hidden;
+            color: $colorBrown;
+            width: 70%;
+        }
+
+        .listCoupes,
+        .listSoins {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 20px 0;
+
+            h3,
+            p {
+                z-index: 5;
+            }
+
+            h3 {
+                min-width: 15%;
+                text-align: left;
+            }
+
+            .prix {
+                text-align: right;
+                width: 10%;
+            }
+        }
+    }
 }
 
-.btn {
-    position: absolute;
-    top: 50%;
-    padding: 15px;
-    color: rgb(61, 61, 61);
-    font-weight: bold;
-    font-size: 3rem;
-    border: none;
-    background-color: transparent;
+// 4e section - Les photos
+#section4 {
+    background-color: $colorLightGrey;
 }
 
-.btn-prev {
-    left: 0;
+// 5e section - Les avis clients
+#section5 {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    padding-bottom: 0;
+    overflow: hidden;
+    >img{
+        width: 50%;
+        height: 100%;
+        object-fit:cover;
+        box-sizing: content-box;
+        padding: 0;
+        overflow: visible;
+
+    }
+    >div{
+        width: 50%;
+    }
+    .apiAvis{
+        text-align: center;
+        >*{
+            padding: 0.5em;
+        }
+        h3{
+            font-size: 40px;
+            font-weight: lighter;
+        }
+        p{
+            color: white;
+        }
+        img{
+            width: 35px;
+        }
+    }
+    .formAvis{
+        width: 75%;
+        margin:  50px auto;
+        form{
+            input{
+                background: none;
+                border: none;
+                border-bottom: solid 1px white;
+                width: 100%;
+                height: 30px;
+                margin: 1em 0;
+                &::placeholder{
+                    color: white;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+        button {
+            margin-top: 2em;
+            height: 50px;
+            width: 180px;
+            background-color: white;
+            color: black;
+            border: none;
+            letter-spacing: 5px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $colorLightGrey;
+                color: black;
+            }
+            &:active {
+                background-color: $colorGrey;
+                color: $colorGreen;
+            }
+        }
+    }
 }
 
-.btn-next {
-    right: 0;
+// 6e section - Formulaire de reservation
+#section6 {
+    text-align: center;
+    background-color: $colorPurple;
+    width: 100%;
+    height: 100vh;
+    .formReservation{
+        padding: 50px 5vw;
+    }
+    form{
+        color:$colorDarkPurple;
+        width: 100%;
+        input, textarea{
+            background:none;
+            border: none;
+            border-bottom: solid 1px $colorDarkPurple;
+            height: 30px;
+            margin: 1em 0;
+            &::placeholder{
+                color:$colorDarkPurple;
+                font-size: 20px;
+                font-weight: 100;
+            }
+        }
+        input{
+            width: 30%;
+        }
+        textarea{
+            height: 150px;
+            width: 60%;
+        }
+        button {
+            margin-top: 2em;
+            height: 50px;
+            width: 180px;
+            background-color: white;
+            color: black;
+            border: none;
+            letter-spacing: 5px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+            &:active {
+                background-color: $colorGrey;
+                color: $colorGreen;
+            }
+        }
+    }
 }
+
+// 7e section
+#section7 {
+    background-color: $colorSable;
+    display: flex;
+    >div{
+        padding:0 10vh;
+        display: flex;
+        >div{
+            width: 50%;
+            &:first-child{
+                background-color: black;
+            }
+        }
+    }
+    img{
+        object-fit: cover;
+        aspect-ratio: 1;
+        width:50%;
+    }
+    .formContact{
+        width: 50%;
+        padding:  100px;
+        form{
+            margin-top: 50px;
+            input{
+                background: none;
+                border: none;
+                border-bottom: solid 1px white;
+                width: 100%;
+                height: 30px;
+                margin: 1em 0;
+                &::placeholder{
+                    color: white;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+        button {
+            margin-top: 2em;
+            height: 50px;
+            width: 180px;
+            background-color: white;
+            color: black;
+            border: none;
+            letter-spacing: 5px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $colorLightGrey;
+                color: black;
+            }
+            &:active {
+                background-color: $colorGrey;
+                color: $colorGreen;
+            }
+        }
+    }
+} 
+
+/* ----- Footer ----- */
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 5vw;
+    align-items: center;
+    a{
+        display:block;
+    }
+    >div{
+        h3{
+            padding: 1em 0;
+        }
+        a,p{
+            height: 2em;
+            text-decoration: none;
+            &:visited{
+                color:white;
+            }
+        }
+    }
+}
+
 
 /* -----  ----- */
