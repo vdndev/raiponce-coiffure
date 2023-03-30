@@ -145,6 +145,7 @@ formulaireResa.addEventListener("submit", function(event) {
         })
         .then((response) => {
             if (response.ok) {
+                alert("Votre reservation a bien été envoyé !");
                 return response.json();
             } else {
                 throw new Error('erreur');
@@ -173,6 +174,7 @@ formulaireContact.addEventListener("submit", function(event) {
         })
         .then((response) => {
             if (response.ok) {
+                alert("Votre message a bien été envoyé !");
                 return response.json();
             } else {
                 throw new Error('erreur');
