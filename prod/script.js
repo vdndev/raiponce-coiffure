@@ -79,6 +79,48 @@ formulaire.addEventListener("submit", function(event) {
         });
 });
 
+//fetch les soins/////////////////////////////////////////////
+const paraSoins = document.querySelector('.paraSoins');
+
+fetch('../API/soins.php')
+    .then((response)=>{
+        if (response.ok)
+            return response.json()
+    })
+    .then((data)=>{
+        console.log(data);
+        let soins = "";
+        data.soins.forEach(soins => {
+            soins += `
+            ${soins.nom_soins}...${soins.prix_soins}
+            `;
+        });
+        paraSoins.innerHTML = soins;
+    });
+
+//fetch les coupes/////////////////////////////////////////////
+const paraCoupes = document.querySelector('.paraCoupes');
+
+fetch('../API/coupes.php')
+    .then((response)=>{
+        if (response.ok)
+            return response.json()
+    })
+    .then((data)=>{
+        console.log(data);
+        let coupes = "";
+        data.coupes.forEach(coupes => {
+            coupes += `
+            ${coupes.nom_coupes}...${coupes.prix_coupes}
+            `;
+        });
+        paracoupes.innerHTML = coupes;
+    });
+
+
+
+
+
 
 //tableau fetch
 

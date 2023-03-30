@@ -65,12 +65,12 @@
                 <div class="soins">
                     <h3>Les soins</h3>
                     <p>Découvrez nos super soins, que vous ne retrouverez pas ailleurs</p>
-                    <p>API Soins</p>
+                    <p class="paraSoins">API Soins</p>
                 </div>
                 <div class="coupes"> 
                     <h3>Les Coupes</h3>
                     <p>Découvrez nos super coupes, elles sont vraiment uniques</p>
-                    <p>API Coupes</p>
+                    <p class="paraCoupes">API Coupes</p>
                 </div>
             </div>
         </section>
@@ -95,7 +95,7 @@
         <section>
             <h2>Réservez votre rendez-vous</h2>
             <p>Ça va vraiment être un moment exceptionnel</p>
-            <form action="">
+            <form class="formResa" action="">
                 <input type="text" name="prenom" id="prenom" placeholder="Prénom">
                 <input type="text" name="nom" id="nom" placeholder="Nom">
                 <input type="email" name="mail" id="mail" placeholder="Adresse mail">
@@ -108,10 +108,11 @@
         <section>
             <h2>Contactez-nous</h2>
             <p>Pour nous dire quelque chose, éventuellement...</p>
-            <form action="">
+            <form class="formContact" action="">
                 <input type="text" name="prenom" id="prenom" placeholder="Prénom">
                 <input type="text" name="nom" id="nom" placeholder="Nom">
                 <input type="email" name="mail" id="mail" placeholder="Adresse mail">
+                <input type="tel" name="tel" id="tel" placeholder="tel">
                 <input type="text" name="objet" id="objet" placeholder="Objet">
                 <textarea name="msg" id="msg" cols="10" rows="10" placeholder="Message"></textarea>
                 <input type="submit" value="Envoyer">
