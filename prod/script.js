@@ -1,4 +1,7 @@
-//caroussel
+/////////////
+//caroussel//
+/////////////
+
 let sliders = document.querySelectorAll(".slider");
 
 function carousselAuto(slider) {
@@ -48,7 +51,10 @@ for (var i = 0; i < sliders.length; i++) {
     carousselManual(sliders[i]);
 }
 
-//fonctions caroussel d'avis et affichage d'avis ////////////////
+///////////////////////////////////////////////////
+//fonctions caroussel d'avis et affichage d'avis //
+///////////////////////////////////////////////////
+
 let avisSection = document.querySelectorAll(".avis");
 
 function carousselAvis(avisSection) {
@@ -96,14 +102,15 @@ function carousselAvis(avisSection) {
         });
 }
 
+///affichage des avis dans le html
 function afficherAvis(avisSection, avis, index) {
     let slides = avisSection.querySelectorAll(".apiAvis");
     for (let i = 0; i < slides.length; i++) {
         let slide = slides[i];
         let j = i - avis.length + 4 + index;
         if (j >= 0 && j < avis.length) {
-            slide.querySelector("p").innerHTML = avis[j].nom;
-            slide.querySelector("h3").innerHTML = avis[j].msg;
+            slide.querySelector("p").innerHTML = avis[j].nom;  //voir dans la bdd si c'est bien le nom
+            slide.querySelector("h3").innerHTML = avis[j].msg; //voir dans la bdd si c'est bien le nom
         } 
     }
 }
@@ -112,7 +119,10 @@ for (let i = 0; i < avisSection.length; i++) {
     carousselAvis(avisSection[i]);
 }
 
-///envoi des avis
+//////////////////
+//envoi des avis//
+//////////////////
+
 let formulaireAvis = document.querySelector(".formAvis");
 
 formulaireAvis.addEventListener("submit", function(event) {
@@ -121,7 +131,7 @@ formulaireAvis.addEventListener("submit", function(event) {
     const formData = new FormData(formulaireAvis);
     formData.append('submit','');
 
-    fetch("page.php", {
+    fetch("page.php", {  ////changer
         method: "POST",
         body: formData
         })
@@ -138,7 +148,10 @@ formulaireAvis.addEventListener("submit", function(event) {
         });
 });
 
-//fetch les reservations/////////////////////////////////////////////
+//////////////////////////
+//fetch les reservations//
+//////////////////////////
+
 let formulaireResa = document.querySelector(".formResa");
 
 formulaireResa.addEventListener("submit", function(event) {
@@ -147,7 +160,7 @@ formulaireResa.addEventListener("submit", function(event) {
     const formData = new FormData(formulaireResa);
     formData.append('submit','');
 
-    fetch("page.php", {
+    fetch("page.php", { //changer
         method: "POST",
         body: formData
         })
@@ -164,7 +177,10 @@ formulaireResa.addEventListener("submit", function(event) {
         });
 });
 
-//fetch le contact/////////////////////////////////////////////
+////////////////////
+//fetch le contact//
+///////////////////
+
 let formulaireContact = document.querySelector(".formContact");
 
 formulaireContact.addEventListener("submit", function(event) {
@@ -173,7 +189,7 @@ formulaireContact.addEventListener("submit", function(event) {
     const formData = new FormData(formulaireContact);
     formData.append('submit','');
 
-    fetch("page.php", {
+    fetch("page.php", { //changer
         method: "POST",
         body: formData
         })
@@ -190,10 +206,13 @@ formulaireContact.addEventListener("submit", function(event) {
         });
 });
 
-//fetch les soins/////////////////////////////////////////////
+////////////////////
+//fetch les soins//
+///////////////////
+
 const paraSoins = document.querySelector('.listSoins');
 
-fetch('../API/soins.php')
+fetch('../API/soins.php') //changer
     .then((response) => {
         if (response.ok) {
             return response.json();
@@ -204,9 +223,9 @@ fetch('../API/soins.php')
     .then((data) => {
         console.log(data);
         let soinsHTML = "";
-        data.soins.forEach(soin => {
-            soinsHTML += `
-                <h3>${soin.nom_soins}</h3>
+        data.soins.forEach(soin => {  //verifier juste en bas les noms sur la bdd
+            soinsHTML += `  
+                <h3>${soin.nom_soins}</h3> 
                 <p id="dots">...............................................................................................................</p>
                 <p class="prix">${soin.prix_soins}</p>
             `;
@@ -218,11 +237,13 @@ fetch('../API/soins.php')
         alert("erreur");
     });
 
+////////////////////
+//fetch les coupes//
+////////////////////
 
-//fetch les coupes/////////////////////////////////////////////
 const paraCoupes = document.querySelector('.listCoupes');
 
-fetch('../API/coupes.php')
+fetch('../API/coupes.php') //changer
     .then((response) => {
         if (response.ok) {
             return response.json();
@@ -233,7 +254,7 @@ fetch('../API/coupes.php')
     .then((data) => {
         console.log(data);
         let coupesHTML = "";
-        data.coupes.forEach(coupe => {
+        data.coupes.forEach(coupe => { //verifier juste en bas les noms sur la bdd
             coupesHTML += `
                 <h3>${coupe.nom_coupes}</h3>
                 <p id="dots">...............................................................................................................</p>
