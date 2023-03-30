@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS coiffure;
+
+USE coiffure;
+
+CREATE TABLE config(
+  id INT PRIMARY KEY UNSIGNED AUTO_INCREMENT NOT NULL,
+  admin_password VARCHAR(100) NOT NULL
+)Engine=InnoDB;
+
+CREATE TABLE types_prestation(
+  id INT PRIMARY KEY UNSIGNED AUTO_INCREMENT NOT NULL,
+  nom VARCHAR(50) UNIQUE NOT NULL
+)Engine=InnoDB;
+
+CREATE TABLE longueur_cheuveux(
+  id INT PRIMARY KEY UNSIGNED AUTO_INCREMENT NOT NULL,
+  nom VARCHAR(50) UNIQUE NOT NULL
+)Engine=InnoDB;
+
+CREATE TABLE prestations(
+  id INT PRIMARY KEY UNSIGNED AUTO_INCREMENT NOT NULL,
+  nom VARCHAR(50) UNIQUE NOT NULL,
+  tarif INT UNSIGNED NOT NULL
+  id_type INT UNSIGNED NOT NULL,
+  id_longueur INT UNSIGNED NOT NULL
+)Engine=InnoDB;
+
+CREATE TABLE contacts(
+  id INT PRIMARY KEY UNSIGNED AUTO_INCREMENT NOT NULL,
+  nom VARCHAR(50) NOT NULL,
+  prenom VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  tel VARCHAR(50) NOT NULL,
+  objet VARCHAR(50) NOT NULL,
+  message Text NOT NULL,
+  created_at DATE UNIQUE NOT NULL
+)Engine=InnoDB;
+
+CREATE TABLE avis(
+  id INT PRIMARY KEY UNSIGNED AUTO_INCREMENT NOT NULL,
+  prenom VARCHAR(50) NOT NULL,
+  message TEXT NOT NULL,
+  created_at DATE NOT NULL
+)Engine=InnoDB;
+
+ALTER TABLE prestations
+  ADD CONSTRAINT fk_typer_prestations
+  FOREIGN KEY(id_type)
+  REFERENCES types_prestation(id);
+ALTER TABLE prestations
+  ADD CONSTRAINT fk_mesurer_prestations
+  FOREIGN KEY(id_longueur)
+  REFERENCES longueur_cheuveux(id);
