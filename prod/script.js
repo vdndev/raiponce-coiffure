@@ -87,7 +87,7 @@ formulaireAvis.addEventListener("submit", function(event) {
 });
 
 //fetch les soins/////////////////////////////////////////////
-const paraSoins = document.querySelector('.paraSoins');
+const paraSoins = document.querySelector('.listSoins');
 
 fetch('../API/soins.php')
     .then((response) => {
@@ -102,14 +102,18 @@ fetch('../API/soins.php')
         let soins = "";
         data.soins.forEach(soins => {
             soins += `
-            ${soins.nom_soins}...${soins.prix_soins}
+            <h3>${soins.nom_soins}</h3>
+            <p id="dots">
+                ...............................................................................................................
+            </p>
+            <p class="prix">${soins.prix_soins}</p>
             `;
         });
         paraSoins.innerHTML = soins;
     });
 
 //fetch les coupes/////////////////////////////////////////////
-const paraCoupes = document.querySelector('.paraCoupes');
+const paraCoupes = document.querySelector('.listCoupes');
 
 fetch('../API/coupes.php')
     .then((response) => {
@@ -124,7 +128,11 @@ fetch('../API/coupes.php')
         let coupes = "";
         data.coupes.forEach(coupes => {
             coupes += `
-            ${coupes.nom_coupes}...${coupes.prix_coupes}
+            <h3>${coupes.nom_coupes}</h3>
+            <p id="dots">
+                ...............................................................................................................
+            </p>
+            <p class="prix">${coupes.prix_coupes}</p>
             `;
         });
         paracoupes.innerHTML = coupes;
