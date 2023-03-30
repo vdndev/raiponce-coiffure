@@ -50,19 +50,26 @@ for (var i = 0; i < sliders.length; i++) {
 }
 
 //fetch les avis/////////////////////////////////////////////
-let formulaire = document.querySelector(".formAvis")
+let formulaireAvis = document.querySelector(".formAvis")
 let divAvis = document.querySelector(".avis");
 
-formulaire.addEventListener("submit", function(event) {
+formulaireAvis.addEventListener("submit", function(event) {
     event.preventDefault(); 
 
-    const formData = new FormData(formulaire);
+    const formData = new FormData(formulaireAvis);
+    formData.append('submit','');
 
     fetch("http://localhost/raiponce-coiffure/prod/", {
         method: "POST",
         body: formData
         })
-        .then(response => response.json())
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('erreur');
+            }
+        })
         .then(data => {
             console.log(data);
             let avis = "";
@@ -83,9 +90,12 @@ formulaire.addEventListener("submit", function(event) {
 const paraSoins = document.querySelector('.paraSoins');
 
 fetch('../API/soins.php')
-    .then((response)=>{
-        if (response.ok)
-            return response.json()
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('erreur');
+        }
     })
     .then((data)=>{
         console.log(data);
@@ -102,9 +112,12 @@ fetch('../API/soins.php')
 const paraCoupes = document.querySelector('.paraCoupes');
 
 fetch('../API/coupes.php')
-    .then((response)=>{
-        if (response.ok)
-            return response.json()
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('erreur');
+        }
     })
     .then((data)=>{
         console.log(data);
@@ -117,23 +130,58 @@ fetch('../API/coupes.php')
         paracoupes.innerHTML = coupes;
     });
 
+//fetch les reservations/////////////////////////////////////////////
+let formulaireResa = document.querySelector(".formResa");
 
+formulaireResa.addEventListener("submit", function(event) {
+    event.preventDefault(); 
 
+    const formData = new FormData(formulaireResa);
+    formData.append('submit','');
 
+    fetch("page.php", {
+        method: "POST",
+        body: formData
+        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('erreur');
+            }
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+});
 
+//fetch le contact/////////////////////////////////////////////
+let formulaireContact = document.querySelector(".formContact");
 
-//tableau fetch
+formulaireContact.addEventListener("submit", function(event) {
+    event.preventDefault(); 
 
-//incremente et decremente avec bouton
+    const formData = new FormData(formulaireContact);
+    formData.append('submit','');
 
-//variable counter
-
-//fonction generer les tarifs et soins
-
-//recup donnes sur accueil
-
-//fonction pour generer html 
-
-//quey du formulaire
-// evenement submit
-//fetch du submit
+    fetch("page.php", {
+        method: "POST",
+        body: formData
+        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('erreur');
+            }
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+});
