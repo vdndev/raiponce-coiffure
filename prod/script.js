@@ -49,12 +49,13 @@ for (var i = 0; i < sliders.length; i++) {
 }
 
 //fonctions caroussel d'avis et affichage d'avis ////////////////
-let avisSections = document.querySelectorAll(".avis");
+let avisSection = document.querySelectorAll(".avis");
 
-function carousselAvis(avisSections) {
-    let prev = avisSections.querySelector(".btn-prev");
-    let next = avisSections.querySelector(".btn-next");
+function carousselAvis(avisSection) {
+    let prev = avisSection.querySelector(".btn-prev");
+    let next = avisSection.querySelector(".btn-next");
     let avis = [];
+    let index = 0;
 
     // récupérer les avis depuis l'API
     fetch('../API/avis.php')
@@ -66,27 +67,27 @@ function carousselAvis(avisSections) {
             }
         })
         .then((data) => {
-            avis = data;
-            let start = Math.max(0, avis.length - 4);
-            let end = avis.length;
-
-            // afficher les 4 derniers avis dans le carrousel
-            afficherAvis(avisSections, avis.slice(start, end));
+            // filtrer les 4 derniers avis
+            avis = data.slice(-4);
+            // inverser l'ordre des avis pour les afficher du plus récent au plus ancien
+            avis.reverse();
+            // afficher les avis dans le carrousel
+            afficherAvis(avisSection, avis);
 
             prev.addEventListener("click", function () {
-                if (start > 0) {
-                    start--;
-                    end--;
-                    afficherAvis(avisSections, avis.slice(start, end));
+                index--;
+                if (index < 0) {
+                    index = avis.length - 1;
                 }
+                afficherAvis(avisSection, avis);
             });
 
             next.addEventListener("click", function () {
-                if (end < avis.length) {
-                    start++;
-                    end++;
-                    afficherAvis(avisSections, avis.slice(start, end));
+                index++;
+                if (index === avis.length) {
+                    index = 0;
                 }
+                afficherAvis(avisSection, avis);
             });
         })
         .catch((error) => {
@@ -95,27 +96,43 @@ function carousselAvis(avisSections) {
         });
 }
 
-//fetch les avis/////////////////////////////////////////////
-let formulaireAvis = document.querySelector(".formAvis");
-let avis = [];
+function afficherAvis(avisSection, avis) {
+    let slides = avisSection.querySelectorAll(".apiAvis");
+    for (let i = 0; i < slides.length; i++) {
+        let slide = slides[i];
+        let j = i - avis.length + 4;
+        if (j >= 0 && j < avis.length) {
+            slide.querySelector("p").innerHTML = avis[j].nom;
+            slide.querySelector("h3").innerHTML = avis[j].msg;
+        } 
+    }
+}
 
-fetch('../API/avis.php')
-    .then((response) => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('erreur');
-        }
-    })
-    .then((data)=>{
-        console.log(data);
-        avis = data;
-        afficherAvis();
-    })
-    .catch((error) => {
-        console.error(error);
-        alert("erreur");
-    });
+for (let i = 0; i < avisSection.length; i++) {
+    carousselAvis(avisSection[i]);
+}
+
+//fetch les avis/////////////////////////////////////////////
+// let formulaireAvis = document.querySelector(".formAvis");
+// let avis = [];
+
+// fetch('../API/avis.php')
+//     .then((response) => {
+//         if (response.ok) {
+//             return response.json();
+//         } else {
+//             throw new Error('erreur');
+//         }
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         avis = data;
+//         afficherAvis();
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//         alert("erreur");
+//     });
     
 ///envoi des avis
 formulaireAvis.addEventListener("submit", function(event) {
