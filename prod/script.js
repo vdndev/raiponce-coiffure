@@ -58,7 +58,7 @@ function carousselAvis(avisSection) {
     let index = 0;
 
     // récupérer les avis depuis l'API
-    fetch('../API/avis.php')
+    fetch('avis.json')
         .then((response) => {
             if (response.ok) {
                 return response.json();
@@ -79,15 +79,15 @@ function carousselAvis(avisSection) {
                 if (index < 0) {
                     index = avis.length - 1;
                 }
-                afficherAvis(avisSection, avis);
+                afficherAvis(avisSection, avis, index);
             });
-
+            
             next.addEventListener("click", function () {
                 index++;
                 if (index === avis.length) {
                     index = 0;
                 }
-                afficherAvis(avisSection, avis);
+                afficherAvis(avisSection, avis, index);
             });
         })
         .catch((error) => {
@@ -96,11 +96,11 @@ function carousselAvis(avisSection) {
         });
 }
 
-function afficherAvis(avisSection, avis) {
+function afficherAvis(avisSection, avis, index) {
     let slides = avisSection.querySelectorAll(".apiAvis");
     for (let i = 0; i < slides.length; i++) {
         let slide = slides[i];
-        let j = i - avis.length + 4;
+        let j = i - avis.length + 4 + index;
         if (j >= 0 && j < avis.length) {
             slide.querySelector("p").innerHTML = avis[j].nom;
             slide.querySelector("h3").innerHTML = avis[j].msg;
@@ -112,29 +112,9 @@ for (let i = 0; i < avisSection.length; i++) {
     carousselAvis(avisSection[i]);
 }
 
-//fetch les avis/////////////////////////////////////////////
-// let formulaireAvis = document.querySelector(".formAvis");
-// let avis = [];
-
-// fetch('../API/avis.php')
-//     .then((response) => {
-//         if (response.ok) {
-//             return response.json();
-//         } else {
-//             throw new Error('erreur');
-//         }
-//     })
-//     .then((data)=>{
-//         console.log(data);
-//         avis = data;
-//         afficherAvis();
-//     })
-//     .catch((error) => {
-//         console.error(error);
-//         alert("erreur");
-//     });
-    
 ///envoi des avis
+let formulaireAvis = document.querySelector(".formAvis");
+
 formulaireAvis.addEventListener("submit", function(event) {
     event.preventDefault(); 
 
