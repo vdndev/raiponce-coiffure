@@ -4,7 +4,7 @@ include "config.php";
 
 try{
 
-$bdd = new PDO('mysql:host=localhost;dbname=gestion_de_projet',$user,$password);
+$bdd = new PDO('mysql:host=localhost;dbname=' . $database,$user,$password);
 
 // précise que par défaut le fetch se fera en fetch_assoc
 $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

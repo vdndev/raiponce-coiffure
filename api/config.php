@@ -1,8 +1,9 @@
 <?php
 
 
-$user;
-$password;
+$user = '';
+$password = '';
+$database = '';
 
 
 
