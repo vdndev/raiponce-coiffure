@@ -12,13 +12,13 @@
 }
 
 /* ----- Colors ----- */
-$colorSable : #DFCCC2;
+$colorSable : #CCB1A3;
 $colorGreen : #C5CEBD;
 $colorPurple : #C2B8CC;
 $colorGrey : #777777;
-$colorBrown : #B49986;
+$colorBrown : #795D4A;
 $colorLightGrey : #D9D9D9;
-$colorDarkPurple: #9B80B7;
+$colorDarkPurple: #754A9F;
 
 /* ----- General ----- */
 * {
@@ -506,6 +506,20 @@ footer {
         }
     }
 }
-
+hr{
+    color: $colorGrey;
+}
+#copyright{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: $colorGrey;
+    padding: 1em;
+    font-size: 10px;
+    img{
+        height: 35px;
+    }
+}
 
 /* -----  ----- */
