@@ -283,6 +283,9 @@ section > * {
 #section5 > div {
   width: 50%;
 }
+#section5 .logo {
+  text-align: center;
+}
 #section5 .apiAvis {
   text-align: center;
 }
@@ -336,6 +339,21 @@ section > * {
 #section5 .formAvis button:active {
   background-color: #777777;
   color: #C5CEBD;
+}
+#section5 .bouton {
+  display: flex;
+  justify-content: space-between;
+}
+#section5 .btn {
+  background: none;
+  border: none;
+  color: #D9D9D9;
+}
+#section5 .btn-prev {
+  left: 0;
+}
+#section5 .btn-next {
+  right: 0;
 }
 
 #section6 {

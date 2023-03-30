@@ -316,6 +316,9 @@ section {
     >div{
         width: 50%;
     }
+    .logo{
+        text-align: center;
+    }
     .apiAvis{
         text-align: center;
         >*{
@@ -368,6 +371,22 @@ section {
                 color: $colorGreen;
             }
         }
+    }
+    .bouton{
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn{
+        background: none;
+        border: none;
+        color: $colorLightGrey;
+    }
+    .btn-prev {
+        left: 0;
+    }
+
+    .btn-next {
+        right: 0;
     }
 }
 
