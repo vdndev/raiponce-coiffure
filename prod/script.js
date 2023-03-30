@@ -156,6 +156,7 @@ formulaireResa.addEventListener("submit", function(event) {
         })
         .catch((error) => {
             console.error(error);
+            alert("erreur");
         });
 });
 
@@ -185,5 +186,6 @@ formulaireContact.addEventListener("submit", function(event) {
         })
         .catch((error) => {
             console.error(error);
+            alert("erreur");
         });
 });
