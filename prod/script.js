@@ -102,7 +102,7 @@ function carousselAvis(avisSection) {
 ///affichage des avis dans le html
 function afficherAvis(avisSection, avis, index) {
   let slide = avisSection.querySelector(".apiAvis");
-  slide.querySelector("p").innerHTML = avis[index].nom; //voir dans la bdd si c'est bien le nom
+  slide.querySelector("p").innerHTML = avis[index].prenom; //voir dans la bdd si c'est bien le nom
   slide.querySelector("h3").innerHTML = avis[index].message; //voir dans la bdd si c'est bien le nom
 }
 
