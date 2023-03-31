@@ -2,15 +2,14 @@
 
 include "../connexion.php";
 
-$json_data = file_get_contents('php://input');
-$data = json_decode($json_data);
-
-if(isset($data['submit'])){
+if(isset($_POST['submit'])){
 
     try{
-    $requete = "INSERT INTO prestations (nom, tarif, id_type) VALUES (?, ?, ?)";
+    $requete = "INSERT INTO prestations (nom, tarif, id_type) VALUES (:nom, :tarif, :id_type)";
     $stmt = $bdd->prepare($requete);
-    $stmt->bindParam("sss", $nom, $tarif,1);
+    $stmt->bindParam(":nom", $_POST['nom']);
+    $stmt->bindParam(":tarif", $_POST['tarif']);
+    $stmt->bindParam(":id_type", 1);
     $stmt->execute();    
 
     // requête de confirmation      
@@ -26,7 +25,7 @@ if(isset($data['submit'])){
         header('content-type:application/json');
         echo json_encode([
             "status"=>500,
-            "message"=>"Erreur : ".$e->getMessage()
+            "message"=>"Erreur : ".$e->getMessage()            
         ]);        
     }
 }
