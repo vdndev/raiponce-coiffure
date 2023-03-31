@@ -28,22 +28,19 @@
     <main>
         <!-- En tête -->
         <section id="section1">
-            <h1>Lorem quelque chose de vraiment sympa</h1>
-            <img class="mainImg" src="assets/img/imgHeader.png" alt="mainImg">
+            <h1>Lorem ipsum
+                dolor sit amet, consectur adipiscing</h1>
+            <div class="mainImg">
+                <img>
+                <img src="assets/img/headerFemme.jpg" alt="mainImg">
+                <img src="assets/img/headerHomme.jpg" alt="mainImg">
+            </div>
         </section>
         <!-- slides, bouton reserver -->
         <section id="section2">
-            <div class="slider">
+            <div class="sec2">
                 <div class="conteneur-slides">
                     <div class="slides"><img src="assets/img/imgSlideFemme.jpg" alt="img1"></div>
-                    <div class="slides"><img src="assets/img/slide2.jpg" alt="img2"></div>
-                    <div class="slides"><img src="assets/img/slide3.jpg" alt="img3"></div>
-                    <button onclick="changerSlide(-1)" class="btn btn-prev"><span class="material-symbols-outlined">
-                            arrow_back_ios
-                        </span></button>
-                    <button onclick="changerSlide(1)" class="btn btn-next"><span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span></button>
                 </div>
                 <div class="textSlide">
                     <h2>Découvrez nos incroyables coupes et soins pour femme, wow!</h2>
@@ -53,7 +50,7 @@
                     <button>RESERVER</button>
                 </div>
             </div>
-            <div class="slider">
+            <div class="sec2">
                 <div class="textSlide">
                     <h2>On coupe aussi les cheveux aux hommes, c'est fou non ?</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quos quia, voluptas officiis
@@ -62,9 +59,7 @@
                     <button>RESERVER</button>
                 </div>
                 <div class="conteneur-slides">
-                    <div class="slides active"><img src="assets/img/imgSlideHomme.jpg" alt="img1"></div>
-                    <div class="slides"><img src="" alt="img2"></div>
-                    <div class="slides"><img src="" alt="img3"></div>
+                    <div class="slides"><img src="assets/img/imgSlideHomme.jpg" alt="img1"></div>
                 </div>
             </div>
             <div class="logo"><img src="assets/img/LogoSolo.svg" alt="logo"></div>
@@ -136,7 +131,19 @@
         </section>
         <!-- Les photos -->
         <section id="section4">
-
+            <div class="slider">
+                <div class="conteneur-slides">
+                    <div class="imgSlides active"><img src="assets/img/slide1.jpg" alt="img1"></div>
+                    <div class="imgSlides"><img src="assets/img/slide2.jpg" alt="img2"></div>
+                    <div class="imgSlides"><img src="assets/img/slide3.jpg" alt="img3"></div>
+                    <button class="btn btn-prev"><span class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span></button>
+                    <button class="btn btn-next"><span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span></button>
+                </div>
+            </div>
         </section>
         <!-- les avis clients -->
         <section id="section5">
@@ -158,12 +165,12 @@
                     </form>
                 </div>
                 <div class="bouton">
-                    <button  class="btn btn-prev"><span class="material-symbols-outlined">
-                        arrow_back_ios
-                    </span></button>
-                <button  class="btn btn-next"><span class="material-symbols-outlined">
-                        arrow_forward_ios
-                    </span></button>
+                    <button class="btn btn-prev"><span class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span></button>
+                    <button class="btn btn-next"><span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span></button>
                 </div>
             </div>
             <img src="assets/img/imgHeader.png" alt="img">
