@@ -107,20 +107,24 @@ section {
     padding: 0;
     width: 100%;
     height: 100vh;
+    background-color: $colorPurple;
     h1 {
         position: absolute;
-        top: 75%;
+        top: 50%;
         z-index: 3;
         width: 50%;
     }
-
     .mainImg {
-        padding: 0;
-        width: 100%; 
-        height: 100%;
-        background-color: $colorPurple;
-        object-fit: cover;
-        box-sizing: content-box;
+        position: absolute;
+        top: 25%;
+        display: flex;
+        justify-content: space-evenly;
+        img{
+            width: 25%;
+            aspect-ratio: 1;
+            border-radius: 30px;
+
+        }
     }
 }
 
@@ -128,7 +132,7 @@ section {
 #section2 {
     background-color: $colorGreen;
     max-height: none;
-    .slider {
+    .sec2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
 
@@ -143,9 +147,6 @@ section {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                opacity: 0;
-                transition: opacity 1s ease-in-out;
-
                 img {
                     width: 100%;
                     object-fit: cover;
@@ -294,6 +295,54 @@ section {
 // 4e section - Les photos
 #section4 {
     background-color: $colorLightGrey;
+    width: 100%;
+    height: 100vh;
+    max-height: none;
+    .slider {
+        .conteneur-slides {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+
+            .imgSlides {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: fill;
+                }
+            }
+
+            .imgSlides.active {
+                opacity: 1;
+            }
+
+            .btn {
+                position: absolute;
+                top: 50%;
+                padding: 15px;
+                color: $colorGrey;
+                font-weight: bold;
+                font-size: 3rem;
+                border: none;
+                background-color: transparent;
+            }
+
+            .btn-prev {
+                left: 0;
+            }
+
+            .btn-next {
+                right: 0;
+            }
+        }
+    }
 }
 
 // 5e section - Les avis clients
@@ -311,7 +360,6 @@ section {
         box-sizing: content-box;
         padding: 0;
         overflow: visible;
-
     }
     >div{
         width: 50%;
