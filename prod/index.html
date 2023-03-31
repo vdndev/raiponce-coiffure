@@ -152,8 +152,14 @@
                     <h3>“Mes cheveux ont été coupés comme jamais auparavant, c’est un moment que je n’oublierai jamais.”
                     </h3>
                     <p>Margaux, cliente ravie</p>
+                    <img src="assets/img/LogoSolo.svg" alt="">
                 </div>
-                <div class="logo"><img src="assets/img/LogoSolo.svg" alt=""></div>
+                <button class="btn btn-prev"><span class="material-symbols-outlined">
+                    arrow_back_ios
+                </span></button>
+            <button class="btn btn-next"><span class="material-symbols-outlined">
+                    arrow_forward_ios
+                </span></button>
                 <div class="formAvis">
                     <form action="">
                         <input type="text" name="prenom" placeholder="Prénom"><br>
@@ -184,10 +190,9 @@
                     <input type="text" name="prenom" id="prenom" placeholder="Prénom">
                     <input type="text" name="nom" id="nom" placeholder="Nom"><br>
                     <input type="email" name="mail" id="mail" placeholder="Adresse mail">
-                    <input type="tel" name="tel" id="tel" placeholder="Téléphone">
+                    <input type="text" name="objet" id="objet" placeholder="Objet"><br>
                     <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Message"></textarea><br>
-                    <button type="submit">RESERVER</button>
-                    <input type="hidden" name="type_contact" value="reservation">
+                    <button>RESERVER</button>
                 </form>
             </div>
         </section>
@@ -201,10 +206,9 @@
                         <input type="text" name="prenom" id="prenom" placeholder="Prénom"><br>
                         <input type="text" name="nom" id="nom" placeholder="Nom"><br>
                         <input type="email" name="mail" id="mail" placeholder="Adresse mail"><br>
-                        <input type="tel" name="tel" id="tel" placeholder="Téléphone"><br>
+                        <input type="text" name="objet" id="objet" placeholder="Objet"><br>
                         <input name="msg" id="msg" placeholder="Message"></input><br>
-                        <button type="submit">ENVOYER</button>
-                        <input type="hidden" name="type_contact" value="contact">
+                        <button>ENVOYER</button>
                     </form>
                 </div>
                 <img src="assets/img/imgContact.jpg" alt="">
@@ -236,6 +240,7 @@
         </div>
 
     </footer>
+
     <div id="copyright">
         <img src="assets/img/favicon-blog.png" alt="">
         <p>Created by hackeurs vaillants © 2023</p>

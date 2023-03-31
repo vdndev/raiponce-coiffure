@@ -1,0 +1,10 @@
+<?php
+
+
+$user = '';
+$password = '';
+$database = '';
+
+
+
+?>
