@@ -2,15 +2,13 @@
 
 include "../connexion.php";
 
-$json_data = file_get_contents('php://input');
-$data = json_decode($json_data);
-
-if(isset($data['submit'])){
+if(isset($POST['submit'])){
 
     try{
-    $requete = "INSERT INTO avis (prenom, message) VALUES (?, ?)";
+    $requete = "INSERT INTO avis (prenom, message) VALUES (:prenom, :message)";
     $stmt = $bdd->prepare($requete);
-    $stmt->bindParam("sss", $prenom, $message);
+    $stmt->bindParam(":prenom", $_POST['prenom']);
+    $stmt->bindParam(":message", $_POST['message']);
     $stmt->execute();    
 
     // requête de confirmation      

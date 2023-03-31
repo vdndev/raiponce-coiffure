@@ -2,15 +2,17 @@
 
 include "../connexion.php";
 
-$json_data = file_get_contents('php://input');
-$data = json_decode($json_data);
-
-if(isset($data['submit'])){
+if(isset($$_POST['submit'])){
 
     try{
-    $requete = "INSERT INTO contacts (nom, prenom, email, tel, objet, message) VALUES (?, ?, ?, ?, ?, ?)";
+    $requete = "INSERT INTO contacts (nom, prenom, email, tel, objet, message) VALUES (:nom, :prenom, :email, :tel, :objet, :message)";
     $stmt = $bdd->prepare($requete);
-    $stmt->bindParam("sss", $nom, $prenom, $email, $tel, $objet, $message);
+    $stmt->bindParam(":nom",$_POST['nom']);
+    $stmt->bindParam(":prenom",$_POST['prenom']);
+    $stmt->bindparam(":email",$_POST['email']);
+    $stmt->bindParam(":tel",$_POST['tel']);
+    $stmt->bindParam(":objet",$_POST['objet']);
+    $stmt->bindParam(":message",$_POST['message']);    
     $stmt->execute();    
 
     // requête de confirmation      
