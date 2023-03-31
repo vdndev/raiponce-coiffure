@@ -214,7 +214,7 @@ fetch("../api/soins/read.php")
   .then((data) => {
     console.log(data);
     let soinsHTML = "";
-    data.soins.forEach((soin) => {
+    data.forEach((soin) => {
       soinsHTML += `
         <div class="listSoins">
             <h3>${soin.nom}</h3> 
@@ -247,7 +247,7 @@ fetch("../api/coupes/read.php")
   .then((data) => {
     console.log(data);
     let coupesHTML = "";
-    data.coupes.forEach((coupe) => {
+    data.forEach((coupe) => {
       coupesHTML += `
         <div class="listCoupes">
             <h3>${coupe.nom}</h3>
