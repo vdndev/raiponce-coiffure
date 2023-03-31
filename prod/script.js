@@ -75,7 +75,7 @@ function carousselAvis(avisSection) {
       // inverser l'ordre des avis pour les afficher du plus récent au plus ancien
       avis.reverse();
       // afficher les avis dans le carrousel
-      afficherAvis(avisSection, avis);
+      afficherAvis(avisSection, avis, index);
 
       prev.addEventListener("click", function () {
         index--;
@@ -101,12 +101,9 @@ function carousselAvis(avisSection) {
 
 ///affichage des avis dans le html
 function afficherAvis(avisSection, avis, index) {
-  let slides = avisSection.querySelectorAll(".apiAvis");
-  for (let i = 0; i < slides.length; i++) {
-    let slide = slides[i];
-    slide.querySelector("p").innerHTML = avis[index].nom; //voir dans la bdd si c'est bien le nom
-    slide.querySelector("h3").innerHTML = avis[index].message; //voir dans la bdd si c'est bien le nom
-  }
+  let slide = avisSection.querySelector(".apiAvis");
+  slide.querySelector("p").innerHTML = avis[index].nom; //voir dans la bdd si c'est bien le nom
+  slide.querySelector("h3").innerHTML = avis[index].message; //voir dans la bdd si c'est bien le nom
 }
 
 for (let i = 0; i < avisSection.length; i++) {
@@ -146,7 +143,7 @@ formulaireAvis.addEventListener("submit", function (event) {
 //fetch les reservations//
 //////////////////////////
 
-let formulaireResa = document.querySelector(".formResa");
+let formulaireResa = document.querySelector(".formReservation");
 
 formulaireResa.addEventListener("submit", function (event) {
   event.preventDefault();
