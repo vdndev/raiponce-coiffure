@@ -1,9 +1,9 @@
 <?php
 
-
-$user = '';
-$password = '';
-$database = '';
+$host = 'mariadb';
+$user = 'coiffure';
+$password = 'coiffure';
+$database = 'coiffure';
 
 
 
